@@ -1,0 +1,28 @@
+
+<ion-header>
+    <ion-navbar color="atBlueF">
+      <ion-buttons start>
+        <button ion-button menuToggle>
+          <ion-icon name ="menu"></ion-icon>
+        </button>
+        </ion-buttons>
+        <ion-buttons end >
+          <button ion-button (click)="openSearch()"><ion-icon name ="search"></ion-icon></button>
+          <button ion-button (click)="openProfil()"><ion-icon name ="person"></ion-icon></button>
+          <button ion-button (click)="openMore($event)"><ion-icon name ="more"></ion-icon></button>
+         
+        </ion-buttons>
+      <ion-title>
+        Favoris
+      </ion-title>
+    </ion-navbar>
+  
+   
+  </ion-header>
+
+
+
+<ion-content padding style="background-color:#eee">
+  <p class="centheart">Vous devez être connecté pour</p><p class="centheart">acceder aux favoris !</p>   
+    <ion-icon name ="heart-outline" class="decheart"></ion-icon>
+</ion-content>

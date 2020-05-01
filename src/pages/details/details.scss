@@ -1,0 +1,65 @@
+page-details {
+
+    .icon-yellow{
+        color:#f4e242;
+    }
+
+img.image
+    {
+   /// align-content: center;
+    margin-left: 30px;
+    
+  // background-color: #eee;
+    }
+
+    p.text
+    {
+        padding: 5px;
+        margin-bottom: 0;
+        margin-top:0;
+       
+       font-size:17px;
+       font-style: oblique;
+       
+    }
+    p.prix
+    {
+      font-size: 15px;
+      color:black;
+     
+     
+    }
+    p.PromoPrixA
+    {
+      font-size: 15px;
+      color:black;
+      
+    }
+    .PromoPrix
+    {
+      font-size: 15px;
+      color:green;
+     
+
+    }
+    div.input
+    {  
+        
+        margin-left: 350px;
+       // display: inline;
+        
+    }
+ion-icon.heart
+{
+ font-size:30px;
+ color: rgba(216, 8, 8, 0.726);
+}
+    ion-card.cardDetail
+    {
+        height: 220px;
+        width: 90%;
+        padding: 5px;
+        margin-left:20px; 
+        background-color: #eee;
+    }
+}

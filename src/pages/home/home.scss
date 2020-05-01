@@ -1,0 +1,111 @@
+page-home {
+
+    .monFooter{
+       text-align:center;
+    }
+    .icon-yellow{
+        color:#f4e242;
+    }
+     
+    .myCardProductContentPromo {
+     // float: left;
+      //margin-left:10px;
+      height: 230px;
+      width: 90%;
+      padding: 5px;
+      }
+    div.divAll
+    {
+      float:left;
+     // background-color: #f4e242;
+      width:48%;
+    }
+
+    img.imageCss
+    {
+      height:80px;
+      width:100%;
+    }
+
+    p.PromoPrixA
+    {
+      font-size: 10px;
+      color:black;
+      text-align: center
+    }
+    .PromoPrix
+    {
+      font-size: 10px;
+      color:green;
+      text-align: center
+
+    }
+    ion-icon.heart
+     {
+ 
+   color: rgba(216, 8, 8, 0.726);
+    }
+    p.prix
+    {
+      font-size: 10px;
+      color:black;
+      text-align: center;
+      margin-top: 10px;
+      /*align-items: center;
+      display: flex;
+      justify-content: center;*/
+    }
+    .myCardProductContent
+    {
+      float: left;
+      height: 200px;
+      width: 42%;
+      padding: 5px;
+    }
+    .CardCategorieProduct
+    {
+      height:500px;
+      
+    }
+    .cat
+    {
+      
+      padding: 5px;
+      margin-bottom: 0;
+     clear: both;
+     font-size:17px;
+     font-style: oblique;
+     
+
+    }
+    ion-title.AtShopT
+ {
+     
+     //margin-top: 50px;
+     font-size: 50px;
+     color:#0b0b57;
+     font-family: 'Dancing Script', cursive;
+   // font-family: 'Dancing Script', cursive;
+
+    //font-family: 'Pacifico', cursive;
+ }
+    div.Promo
+    {
+      //margin:auto;
+     // justify-content: center;
+      margin-left:18px;
+      margin-right: 0px;
+    }
+    ion-card.cardPrix
+    {
+     // background-color: rgba(155, 193, 219, 0.815);
+      margin-top: 0;
+      clear:both;
+      height: 50px;
+      width: 90%;
+      padding: 5px;
+
+    }
+    }
+    
+

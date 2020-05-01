@@ -1,0 +1,7 @@
+{
+  "name": "AtShop-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

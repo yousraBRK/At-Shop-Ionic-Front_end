@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar color="atBlueF">
+    <ion-title>Connexion</ion-title>
+  </ion-navbar>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Pacifico&display=swap" rel="stylesheet">  
+</ion-header>
+
+
+<ion-content padding class="bg" >
+ 
+   <br/><br/><br/><br/>
+  <h1 class="AtShop">At <span style="color:green">S</span>hop</h1>
+  
+   <br/><br/>
+
+
+    <ion-item  style="background :none">
+       <ion-icon  item-left name="person"></ion-icon> 
+      <ion-input type="text" [(ngModel)] ="UserName" placeholder="Nom d'utilisateur"></ion-input>
+    </ion-item>
+
+    <ion-item style="background :none">
+    <ion-icon  item-left name="unlock"></ion-icon> 
+      <ion-input type="password" [(ngModel)] ="Password" placeholder="Mot de passe"></ion-input>
+    </ion-item>
+  
+  
+  <button class ="boutonLog" (click)="logIn()">Connecter</button>
+  <p class="pCompte" id="left" >Nouveau sur AtShop?</p> <p class="pCompte" id="right" style="color:rgb(10, 16, 70)"  (click)="openRegister()"> <strong>CRÉER UN COMPTE</strong></p>
+</ion-content>

@@ -1,0 +1,57 @@
+
+<ion-header>
+
+    <ion-navbar color="atBlueF">
+        <ion-title>{{title}}</ion-title>
+        <ion-buttons end >
+          <button ion-button (click)="openSearch()"><ion-icon name ="search"></ion-icon></button>
+          <button ion-button  (click)="openCart()"><ion-icon name ="cart"></ion-icon></button>
+          <button ion-button (click)="openMore($event)"><ion-icon name ="more"></ion-icon></button>
+         
+        </ion-buttons>
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: rgba(238, 238, 238, 0.911)">
+  <div class="filtreClass" (click)="openFiltre()">
+  <ion-icon ios="ios-funnel" md="md-funnel"></ion-icon>
+   Filtres
+  </div>
+  <hr color="grey">
+  <div class="Promo">
+      <div class="divAll" *ngFor='let product of products' >
+          
+          <ion-card class="myCardProductContentPromo">
+                <ion-row>
+
+                    <ion-col *ngIf="isUser==true">
+                        <ion-icon *ngIf="productFav[product['id_produit']]==false"  (click) ="favorite(product)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+                        <ion-icon *ngIf="productFav[product['id_produit']]==true"  (click) ="favorite(product)"  class="heart" style="float:right" name="heart"></ion-icon>
+                       </ion-col>
+                        <ion-col *ngIf="isUser==false">
+                         <ion-icon *ngIf="click==false"  (click) ="favorite(product)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+                         <ion-icon *ngIf="click==true" (click) ="favorite(product)"  class="heart" style="float:right" name="heart"></ion-icon>
+                        </ion-col>
+               </ion-row>
+
+              <ion-row>
+                        <ion-col>
+                        <img [src] ="product['image_min']" (click)="ViewDetails(product)" >
+                      </ion-col>
+             </ion-row>
+             <hr color="grey">
+               <ion-card-content >
+
+                <ion-card-title>
+                  <p >{{product['modele']}}</p>
+              </ion-card-title>
+            </ion-card-content> 
+           </ion-card>
+                 <ion-card class="cardPrix">
+                    <p class="prix" style="font-size:15px" ><strong>{{product['prix']}} DA</strong></p> 
+                </ion-card>
+      </div>
+</div>
+
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar  color="atBlueF">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name ="menu"></ion-icon>
+      </button>
+      </ion-buttons>
+      <ion-buttons end >
+        <button ion-button  (click)="openSearch()"><ion-icon name ="search"></ion-icon></button>
+        <button ion-button (click)="openProfil()"><ion-icon name ="person"></ion-icon></button>
+        <button ion-button (click)="openMore($event)"><ion-icon name ="more"></ion-icon></button>
+       
+      </ion-buttons>
+    <ion-title>
+      Mon panier
+    </ion-title>
+  </ion-navbar>
+
+ 
+</ion-header>
+
+<ion-content padding style="background-color:#eee">
+<ion-list>
+<button ion-item *ngFor="let item of cartItems ;let i =index">
+
+<ion-thumbnail item-left>
+
+<img  [src]="item['image_min']">
+</ion-thumbnail>
+
+<h2 >{{item['modele']}}</h2>
+
+
+
+<p >
+  <ion-badge >
+    {{item['qte']}}
+  </ion-badge >
+  x {{item['prix']}}
+</p>
+
+
+<p  >Prix: {{item['qte'] *item['prix']}}</p>
+
+<button ion-button item-right icon-only clear (click)="RemoveFromCart(item,i)">
+<ion-icon name ="remove-circle" color="danger">
+</ion-icon>
+</button>
+</button>
+
+</ion-list>
+</ion-content>
+
+
+<ion-footer>
+<ion-grid>
+  <ion-row>
+   
+    <ion-col>
+      <button ion-button color="atBlue" block (click)="openCommand()" >Valider</button>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+</ion-footer>

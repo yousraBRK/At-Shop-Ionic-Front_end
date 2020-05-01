@@ -1,0 +1,96 @@
+<!--
+  Generated template for the CommandPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="atBlueF">
+    <ion-title>Mon achat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:#eee">
+
+    <p class="cat"><ion-icon item-left name="person"></ion-icon><strong>&nbsp;Informations personnelles</strong></p>
+    <hr color=grey>
+  
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Nom *</ion-label>
+        <ion-input type="text" [(ngModel)] ="Name" placeholder={{Name}}></ion-input>
+    </ion-item>
+
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Prénom *</ion-label>
+       <ion-input type="text" [(ngModel)] ="FirstName" placeholder={{FirstName}}></ion-input>
+    </ion-item>
+
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Numéro de Tél</ion-label>
+       <ion-input type="text" [(ngModel)] ="NumTel" placeholder={{NumTel}}></ion-input>
+    </ion-item>
+    
+     <p class="cat"><ion-icon item-left name="card"></ion-icon><strong>&nbsp;  Paiement par carte Edahabia</strong></p>
+    <hr color=grey>
+  
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Numéro de la carte * (Numéro composé de 16 chiffres)</ion-label>
+       <ion-input type="text" [(ngModel)] ="NumCart" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Date d'expiration *</ion-label>
+       <ion-input type="Date" [(ngModel)] ="Date" placeholder=""></ion-input>
+    </ion-item>
+     
+
+    <ion-item  style="background-color:#eee"> 
+        <ion-label stacked>Code OTP *(code envoyé par sms)</ion-label>
+       <ion-input type="text" [(ngModel)] ="codeOTP" placeholder=""></ion-input>
+    </ion-item>
+
+
+    <p class="cat"><ion-icon item-left name="logo-dropbox">
+
+    </ion-icon><strong>&nbsp;Livraison</strong></p>
+    <hr color=grey>
+  
+
+       
+      <ion-item   style="background-color:#eee"> 
+          <ion-label stacked>Wilaya *</ion-label>
+          <ion-select [(ngModel)]="wilaya" placeholder={{wilaya}} >
+            <div *ngFor="let wilaya of wilayas">
+                <ion-option value="{{wilaya['nom_wilaya']}}">{{wilaya['nom_wilaya']}}</ion-option>
+            </div>
+         
+          </ion-select>
+      </ion-item>
+  
+      
+      <ion-item  style="background-color:#eee"> 
+          <ion-label stacked>Adresse *</ion-label>
+          <ion-input type="text" [(ngModel)] ="Adresse" placeholder={{Adresse}}></ion-input>
+      </ion-item>
+
+     
+ 
+      
+      
+ <ion-row>
+
+  <ion-col><button ion-button block  color="atBlue" (click)="openConfirm()" >Valider</button>
+  </ion-col>
+   
+ </ion-row>
+      
+      
+
+
+</ion-content>
+ 
+  
+  

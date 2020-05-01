@@ -1,0 +1,118 @@
+
+<ion-header>
+
+  <ion-navbar color="atBlueF">
+    <ion-title>{{produitDetail['modele']}}</ion-title>
+    <ion-buttons end >
+      <button ion-button (click)="openSearch()"><ion-icon  name ="search"></ion-icon></button>
+      <button ion-button (click)="openMore($event)" ><ion-icon name ="more"></ion-icon></button>
+     
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding >
+         
+      
+       <ion-row>
+         <ion-col *ngIf="isUser==true">
+          <ion-icon *ngIf="onFavorite==false"  (click) ="favorite()" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+          <ion-icon *ngIf="onFavorite==true" (click) ="favorite()"  class="heart" style="float:right" name="heart"></ion-icon>
+         </ion-col>
+         <ion-col *ngIf="isUser==false">
+               <ion-icon *ngIf="click==false"  (click) ="favorite()" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+               <ion-icon *ngIf="click==true" (click) ="favorite()"  class="heart" style="float:right" name="heart"></ion-icon>
+              </ion-col>
+       </ion-row>
+
+       <ion-row>
+          <ion-col>
+             <img  style ="clear: both" class="image" [src]="produitDetail['image_min']">
+          </ion-col>
+ 
+        </ion-row>
+       
+        <hr color="grey">
+     
+     <p>{{produitDetail['modele']}}</p>
+     <div *ngIf="produitDetail['promo']==1">
+
+        <p class="PromoPrixA"><s>{{produitDetail['prix_an']}}</s> DA</p>
+        <p class="PromoPrix"><strong>{{produitDetail['prix']}} DA</strong></p>
+     </div>
+
+     <div *ngIf="produitDetail['promo']==0">
+        <p class="prix"><strong>{{produitDetail['prix']}} DA</strong></p>
+     </div>
+     <div *ngIf="dispo==false">
+         <ion-badge style="margin-left:80px;" color="danger">Ce produit est en rupture de stock</ion-badge>
+     </div>
+
+     <hr color="grey">
+     <p  class="text" padding-left> <strong>Details</strong> </p>
+     <hr color="grey">
+
+     <ion-card class="cardDetail">
+       <p>{{produitDetail['details']}}</p>
+     </ion-card>
+     <hr color="grey">
+     <p  class="text" padding-left> <strong>Quantité</strong> </p>
+     <hr color="grey">
+     
+     <ion-grid>
+     <ion-row>
+       <ion-col>
+        <p></p>
+       </ion-col>
+       <ion-col>
+          <p></p>
+         </ion-col>
+         <ion-col>
+            <p></p>
+           </ion-col>
+
+       <ion-col >
+          <ion-badge (click)="plusQte()" style="font-size: 15px"  style="width :25px" style="height :20px" color="atBlue">+</ion-badge>
+       </ion-col>
+       <ion-col >
+         <ion-input type="number"  [(ngModel)] =qte placeholder={{qte}}></ion-input>
+       </ion-col>
+       <ion-col  >
+          <ion-badge  (click)="minusQte()" style="font-size: 16px"  style="width :29px" style="height :21px" color="atBlue">-</ion-badge>
+       </ion-col>
+       <ion-col>
+          <p></p>
+        </ion-col>
+        <ion-col>
+            <p></p>
+           </ion-col>
+           <ion-col>
+              <p></p>
+             </ion-col>
+  
+     </ion-row>
+    </ion-grid>
+ 
+     
+     
+    
+      
+</ion-content>
+
+<ion-footer>
+   
+     
+    <button ion-button color="atBlue" *ngIf="dispo==true" block (click)="addToCart(produitDetail)" >
+    <ion-icon name ="cart"></ion-icon>&nbsp;
+    Ajouter au panier
+    </button>
+     
+    <button ion-button color="atBlue" disabled *ngIf="dispo==false" block (click)="addToCart(produitDetail)" >
+      <ion-icon name ="cart"></ion-icon>&nbsp;
+      Ajouter au panier
+      </button>
+   
+    
+    </ion-footer>
+    

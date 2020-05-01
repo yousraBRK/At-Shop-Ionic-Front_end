@@ -1,0 +1,77 @@
+<!--
+  Generated template for the MyProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="atBlueF">
+    <ion-title>Mon profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:#eee">
+
+            <p class="cat"><strong>Mes informations</strong></p>
+            <hr color=grey>
+         
+             <ion-item  style="background-color:#eee"> 
+                <ion-label stacked>Nom d'utilisateur</ion-label>
+               <ion-input type="text" [(ngModel)] ="Username" placeholder={{Username}}></ion-input>
+            </ion-item>
+        
+        
+            
+       
+
+ 
+               
+              <ion-item   style="background-color:#eee"> 
+                  <ion-label stacked>Nom</ion-label>
+                  <ion-input type="text"[(ngModel)] ="Name" placeholder={{Name}}></ion-input>
+              </ion-item>
+          
+              
+              <ion-item  style="background-color:#eee"> 
+                  <ion-label stacked>Prénom</ion-label>
+                  <ion-input type="text" [(ngModel)] ="FirstName" placeholder= {{FirstName}}></ion-input>
+              </ion-item>
+         
+              
+              <ion-item  style="background-color:#eee"> 
+                  <ion-label stacked>Email</ion-label>
+                  <ion-input type="text"  [(ngModel)] ="Email" placeholder= {{Email}}></ion-input>
+              </ion-item>
+         
+              
+              <ion-item  style="background-color:#eee">  
+                  <ion-label stacked>Numéro de téléphone fixe</ion-label>
+                  <ion-input type="text" [(ngModel)] ="NumFix" placeholder={{NumFix}} ></ion-input>
+              </ion-item>
+         
+              <ion-item  style="background-color:#eee">
+                  <ion-label stacked>Numéro de téléphone portable</ion-label>
+                  <ion-input type="text" [(ngModel)] ="NumMobile" placeholder={{NumMobile}}></ion-input>
+              </ion-item>
+         
+             
+              <ion-item  style="background-color:#eee"> 
+                  <ion-label stacked>Adresse</ion-label>
+                  <ion-input type="text" [(ngModel)] ="Adresse" placeholder={{Adresse}} ></ion-input>
+                </ion-item>
+              <br>
+                <p class="cat"><strong>Sécurité</strong></p>
+                <hr color="grey">
+                <ion-item  style="background-color:#eee">
+                    <p >Changer de mot de passe </p>
+                    <ion-icon item-right name="open" (click)='openChangeMdp()'></ion-icon>
+                </ion-item>
+     
+
+</ion-content>
+<ion-footer>
+  <button ion-button block  color="atBlue" (click)='Modify()'>Enregistrer</button>
+</ion-footer>

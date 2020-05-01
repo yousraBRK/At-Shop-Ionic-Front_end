@@ -1,0 +1,71 @@
+page-login {
+    
+
+
+ button.boutonLog 
+ {
+    padding: 8px;
+    width: 95%;
+    margin-top:20px;
+    margin:12px 20px;
+    font-size: 16px;
+    color:rgb(10, 85, 122);
+    border:2px solid  rgb(10, 85, 122);
+    border-radius: 5px;
+    background :none;
+    border-color:  rgb(10, 85, 122);
+ } 
+ p.pCompte
+ {
+     text-align: center;
+     //display: inline;
+     font-size: 13px;
+        
+
+ }
+ p#left
+ {
+     float: left;
+     margin-left: 40px;
+ }
+ p#right
+ {
+     float: right;
+     margin-right: 40px;
+ }
+
+div.img
+{
+    margin-top: 0;
+    margin-left: 27px;
+    height: 100px;
+    width: 100%;
+   background-color: black;
+    
+    background-image: url(https://6507962e.ngrok.io/images/logoAt.png);
+   background-size: 100% 320px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+ .bg
+ {
+    background: #159957; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top,#157435,#eee, rgb(10, 85, 122),); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #157435,white, rgb(10, 85, 122),); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+ h1.AtShop
+ {
+     text-align: center;
+     //margin-top: 50px;
+     font-size: 50px;
+     color:#0b0b57;
+     font-family: 'Dancing Script', cursive;
+   // font-family: 'Dancing Script', cursive;
+
+    //font-family: 'Pacifico', cursive;
+ }
+ img.img
+ {
+     size:40px;
+ }
+}

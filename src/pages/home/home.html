@@ -1,0 +1,150 @@
+<ion-header>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Pacifico&display=swap" rel="stylesheet">  
+    <ion-navbar color="atBlueF">
+      <ion-buttons start>
+        <button ion-button (click)="openMenu()">
+          <ion-icon name ="menu"></ion-icon>
+        </button>
+        </ion-buttons>
+        
+        <ion-buttons end >
+          <button ion-button (click)="openSearch()"><ion-icon name ="search"></ion-icon></button>
+          <button ion-button (click)="openMore($event)"><ion-icon name ="more"></ion-icon></button> 
+          <button ion-button *ngIf="isUser==false"  (click)="openProfil()"><ion-icon  name ="person"></ion-icon></button>
+          <button ion-button *ngIf="isUser==true" (click)="openProfil()"><ion-icon  style='color:orange' name ="person"></ion-icon></button>  
+        </ion-buttons>
+      <ion-title  class="AtShopT">
+       At <span style="color:green">S</span>hop
+      </ion-title>
+      </ion-navbar>
+      
+  </ion-header>
+
+
+<ion-content style="background-color:#eee" >
+
+
+  <div>
+        <ion-slides  pager autoplay ="1500" loop="true">
+            <ion-slide *ngFor="let picture of pubEvent.picturesPub">
+                <img [src]="picture">
+            </ion-slide>
+            </ion-slides>
+            <p  class="cat" padding-left> <strong> Promotions</strong> </p>
+            <hr color="grey">
+    </div> 
+          
+
+
+  <div class="Promo"> 
+    <div  class="divAll"  *ngFor='let promoProduct of promoProducts let i=index'>
+      
+      <ion-card class="myCardProductContentPromo" *ngIf="i<4">
+          <ion-row>
+              <ion-col *ngIf="isUser==true" style="height: 25px">
+               <ion-icon *ngIf="productFav[promoProduct['id_produit']]==false"  (click) ="favorite(promoProduct)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+               <ion-icon *ngIf="productFav[promoProduct['id_produit']]==true" (click) ="favorite(promoProduct)"  class="heart" style="float:right" name="heart"></ion-icon>
+              </ion-col>
+              <ion-col *ngIf="isUser==false">
+                  <ion-icon *ngIf="click==false"  (click) ="favorite(promoProduct)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+                  <ion-icon *ngIf="click==true" (click) ="favorite(promoProduct)"  class="heart" style="float:right" name="heart"></ion-icon>
+                 </ion-col>
+         </ion-row>
+         <ion-row>
+           <ion-col>
+              <img  [src] ="promoProduct['image_min']" (click)="ViewDetails(promoProduct)">
+           </ion-col>
+         </ion-row>
+          
+          <hr color="grey">
+
+          <ion-card-content >
+
+             <ion-card-title>
+              <p class="PromoDisgn">{{promoProduct['modele']}}</p>
+            </ion-card-title>
+           
+          </ion-card-content>   
+        </ion-card>
+        <ion-card class="cardPrix" *ngIf="i<4">
+            <p class="PromoPrixA" style="font-size:13px"><s>{{promoProduct['prix_an']}}</s> DA</p>
+            <p class="PromoPrix" style="font-size:15px"><strong>{{promoProduct['prix']}}</strong> DA</p>
+       </ion-card> 
+
+    </div>
+  </div> 
+
+ <div>
+    <ion-slides  pager autoplay ="1500" loop="true">
+        <ion-slide *ngFor="let picture of pubs.picturesPub">
+            <img [src]="picture">
+        </ion-slide>
+        </ion-slides>
+</div> 
+
+ 
+
+<div  *ngFor='let productBycat of productsByCat'> 
+    <div class="Promo"> 
+    <p class="cat"><strong>{{productBycat.cat}}</strong></p>
+    <hr color="grey">
+         
+         <div   class="divAll" *ngFor='let prod of productBycat.prod; let i =index'>
+             
+            
+                     <ion-card  class="myCardProductContentPromo" *ngIf ='i <5' >
+                        <ion-row>
+                            <ion-col *ngIf="isUser==true">
+                             <ion-icon *ngIf="productFav[prod['id_produit']]==false"  (click) ="favorite(prod)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+                             <ion-icon *ngIf="productFav[prod['id_produit']]==true"  (click) ="favorite(prod)"  class="heart" style="float:right" name="heart"></ion-icon>
+                            </ion-col>
+                            <ion-col *ngIf="isUser==false">
+                                <ion-icon *ngIf="click==false"  (click) ="favorite(prod)" class="heart"  style="float:right" name="heart-outline"></ion-icon>
+                                <ion-icon *ngIf="click==true"  (click) ="favorite(prod)"  class="heart" style="float:right" name="heart"></ion-icon>
+                               </ion-col>
+                       </ion-row>
+                       <ion-row>
+                      <ion-col>
+                     <img class ="imageCss" [src]="prod['image_min']" (click)="ViewDetails(prod)" >  
+                    </ion-col>
+                  </ion-row>
+                     <hr color="grey">
+                     <ion-card-content >
+                     
+                     <ion-card-title>
+                     <p class="PromoDisgn" >{{prod['modele']}}</p>
+                     </ion-card-title>
+                    
+                      
+                     </ion-card-content>
+                     </ion-card>
+                  
+                     <ion-card  class="cardPrix" style="text-align: center">
+                        <p class="prix" style="font-size:15px"><strong>{{prod['prix']}}</strong>  DA</p> 
+                     </ion-card>
+          
+        </div> 
+       </div>          
+                 
+ </div>
+ 
+
+ 
+          
+     
+ 
+     
+      
+      
+  
+</ion-content>
+
+
+<ion-footer>
+<ion-row>
+ <ion-col offset-1 col-18>
+
+</ion-col>
+</ion-row>
+</ion-footer>

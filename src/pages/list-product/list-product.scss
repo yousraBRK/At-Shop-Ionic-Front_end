@@ -1,0 +1,75 @@
+page-list-product {
+
+    .filtreClass
+    {
+      text-align: center;
+    }
+
+    .myProducts
+    {
+      
+        float: left;
+        height: 150px;
+        width: 50%;
+        padding: 5px;
+        
+    }
+    div.divAll
+    {
+      float:left;
+     // background-color: #f4e242;
+      width:48%;
+    }
+    .myCardProductContentPromo {
+      // float: left;
+       //margin-left:10px;
+       height: 250px;
+       width: 98%;
+       padding: 5px;
+       }
+       ion-icon.heart
+       {
+   
+     color: rgba(216, 8, 8, 0.726);
+      }
+      div.Promo
+      {
+        //margin:auto;
+       // justify-content: center;
+        margin-left:0px;
+        margin-right: 0px;
+      }
+      ion-card.cardPrix
+      {
+       // background-color: rgba(155, 193, 219, 0.815);
+        margin-top: 0;
+        clear:both;
+        height: 50px;
+        width: 98%;
+        padding: 5px;
+  
+      }
+      p.PromoPrixA
+      {
+        font-size: 10px;
+        color:black;
+        text-align: center
+      }
+      .PromoPrix
+      {
+        font-size: 10px;
+        color:green;
+        text-align: center
+  
+      }
+      p.prix
+      {
+        font-size: 10px;
+        color:black;
+        text-align: center;
+        margin-top: 10px;
+        /*align-items: center;
+        display: flex;
+        justify-content: center;*/
+      }
+}

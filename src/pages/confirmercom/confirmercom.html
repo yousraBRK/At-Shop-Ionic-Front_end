@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ConfirmercomPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="atBlueF">
+    <ion-title>Finaliser</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color:#eee">
+<p class="cart"><strong>Votre commande</strong></p>
+
+<ion-card class="card" style="background-color: white"> 
+   
+
+  
+  <div class="montant"><span style="float:left;"><strong>Montant</strong></span><span style="float:right;">{{totalCart}} Da</span></div> 
+  <div class="montant"><span style="float:left;"><strong>Livraison</strong></span><span style="float:right;"class="col1">{{wilayaPrice}} Da</span></div> 
+  <hr color="grey"/>
+  <div class="montant"><span style="float:left;"><strong>Total</strong></span><span style="float:right;" class="col2">{{totalCommand}} Da</span></div>
+</ion-card>
+
+<p class="cart"><strong>Vos informations</strong></p>
+
+<ion-card  class="card" style="background-color: white">
+  <p><strong>Nom</strong> : {{name}}</p>
+  <p><strong>Prénom</strong> : {{firstName}}</p>
+  <p><strong>Adresse</strong> : {{adresse}}</p>
+  <p><strong>Numéro de téléphone</strong> : {{numTel}}</p>
+</ion-card>
+
+<button ion-button block color='atBlueF' (click)="InsertCommand()">Confirmer</button>
+
+</ion-content>

@@ -1,0 +1,62 @@
+<meta charset="utf-8" >
+<ion-menu  [content]="myContent">
+<ion-header >
+
+  <ion-navbar color="atBlueF">
+    <ion-title>Menu</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen >
+
+   <ion-list>
+    <ion-item-divider class="back"  >
+     <strong> Catégories</strong>
+    </ion-item-divider>
+          <div *ngFor="let categorie of CatSubCategories"    [ngClass]="{'section-active':categorie.click, 'section':!categorie.click}">
+              <button ion-item  detail-none (click)="listClick(categorie)">
+                  <h2>{{categorie.cat['nom_categorie']}}</h2>
+                   <ion-icon item-left name="bookmark"></ion-icon>
+                  <ion-icon item-right name="arrow-forward" *ngIf="categorie.click"></ion-icon>
+                  <ion-icon item-right name="arrow-down" *ngIf="!categorie.click"></ion-icon>
+           </button>
+
+              <ion-list *ngIf="categorie.hasMore && categorie.click" style="margin-bottom: 0">
+               
+                 <button ion-item  detail-none *ngFor="let subCategorie of categorie.subCat"  (click)="openList(subCategorie)">
+                      <h2>{{subCategorie['nom_scategorie']}}</h2>  
+                      <ion-icon style="font-size:15px"   item-left name="disc"></ion-icon>       
+                </button>
+                <button ion-item detail-none (click)="openList(categorie.cat)">Tout
+                    <ion-icon style="font-size:15px" item-left name="disc"></ion-icon>
+                </button>
+             </ion-list>
+             <ion-list *ngIf=" !categorie.hasMore && categorie.click" style="margin-bottom: 0"> 
+                <button ion-item detail-none (click)="openList(categorie.cat)">Tout
+                    <ion-icon style="font-size:15px" item-left name="disc"></ion-icon>
+                </button>
+                     
+                
+             </ion-list>
+        </div> 
+        
+    <ion-item-divider class="back" >
+        <strong>Nous contacter</strong> 
+    </ion-item-divider>
+    <p style="text-align: center">Contact de la direction d'AT</p>
+    <hr color="grey">
+  <ion-item> <ion-icon item-left name="call"></ion-icon>Tél: (213) 21 82.38.38</ion-item>
+   
+   <ion-item> <ion-icon item-left name="print"></ion-icon>FAX: (213) 21 82.38.39</ion-item>
+   
+   <ion-item><ion-icon item-left name="mail"></ion-icon>EMAIL: <span style="font-size:13px">contact@algerietelecom.dz</span></ion-item>
+ 
+
+  
+  </ion-list> 
+  
+  </ion-content>
+  </ion-menu>
+  <ion-nav  id="nav" #myContent  [root]="rootPage"></ion-nav>
